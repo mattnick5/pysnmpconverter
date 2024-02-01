@@ -1,0 +1,19 @@
+Target:
+  host: 10.86.76.227
+  port: 162
+
+Engine:
+  host: 10.8.114.65
+  port: 162
+  ipv6: '::1'
+  mib_dir: '/home/iusr_app/.pysnmp/mibs/'
+
+Lookup:
+  severity: {
+    'Minor': [ '5', 'Menor', 'menor', 'MENOR' ],
+    'Major': [ '4', 'major', 'm' ],
+    'Critical': [ '1', 'danger' ],
+    'Clear': [ 'cleared', '0' ]
+  }
+
+

@@ -1,0 +1,30 @@
+version: 1
+disable_existing_loggers: no
+formatters:
+  simple:
+    format: "%(asctime)s - %(levelname)s - %(message)s"
+  verbose:
+    format: "%(asctime)s - %(name)s - %(levelname)s - %(funcName)s:%(lineno)d - %(message)s"
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: simple
+    stream: ext://sys.stdout
+  file:
+    class: logging.handlers.TimedRotatingFileHandler
+    level: DEBUG
+    formatter: simple
+    when: D
+    interval: 1
+    backupCount: 5
+    filename: /opt/PySNMPConverter/log/pysnmpconverter.log
+loggers:
+  root:
+    level: DEBUG
+    handlers: [ console, file ]
+  app:
+    level: DEBUG
+    handlers: [ file ]
+    propagate: yes
+    qualname: app
